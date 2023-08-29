@@ -5,7 +5,7 @@ class EmployeeDatabase:
         self.data = pd.DataFrame(columns=["Employee ID", "Name", "Age", "Salary(PM)"])
 
     def add_employee(self, employee_id, name, age, salary):
-        self.data = self.data.append({"Employee ID": employee_id, "Name": name, "Age": age, "Salary(PM)": salary}, ignore_index=True)
+        self.data = self.data._append({"Employee ID": employee_id, "Name": name, "Age": age, "Salary(PM)": salary}, ignore_index=True)
 
     def search_by_criteria(self, criteria, query):
         if criteria in self.data.columns:
@@ -59,4 +59,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
